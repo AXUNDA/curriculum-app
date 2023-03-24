@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('log') {
-      steps {
-        sh 'ls -la'
+      parallel {
+        stage('log') {
+          steps {
+            sh 'ls -la'
+          }
+        }
+
+        stage('fron end test') {
+          steps {
+            sh 'cd curriculum-front && node --max-old-space-size=1000 $(which npm) install && npm install && npm install vue-jest && npm run tests:unit'
+          }
+        }
+
       }
     }
 
