@@ -17,7 +17,7 @@ pipeline {
 
         stage('unit test') {
           steps {
-            sh 'cd curriculum-front && node --max-old-space-size=1000 $(which npm) install && npm i &&  npm install vue-jest && npm run test:unit'
+            sh 'cd curriculum-front && npm i &&  npm install vue-jest && npm run test:unit'
           }
         }
 
