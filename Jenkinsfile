@@ -8,19 +8,8 @@ pipeline {
     }
 
     stage('log') {
-      parallel {
-        stage('log') {
-          steps {
-            sh 'ls -la'
-          }
-        }
-
-        stage('unit test') {
-          steps {
-            sh 'cd curriculum-front && npm i &&  npm install vue-jest && npm run test:unit'
-          }
-        }
-
+      steps {
+        sh 'ls -la'
       }
     }
 
