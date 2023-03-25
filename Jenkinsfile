@@ -21,6 +21,11 @@ pipeline {
     }
 
     stage('Login to docker hub') {
+      agent any
+      environment {
+        DOCKER_USER = 'AZUNDAH'
+        DOCKER_PASS = 'dondizzy12'
+      }
       steps {
         sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
       }
