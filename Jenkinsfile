@@ -38,7 +38,7 @@ pipeline {
 
   }
   environment {
-    DOCKER_USER = 'Azundah'
+    DOCKER_USER = 'azundah'
     DOCKER_PASS = 'dondizzy12'
   }
 }
