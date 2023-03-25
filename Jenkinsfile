@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('checkout code') {
       steps {
@@ -20,5 +20,15 @@ pipeline {
       }
     }
 
+    stage('Login to docker hub') {
+      steps {
+        sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
+      }
+    }
+
+  }
+  environment {
+    DOCKER_USER = 'AZUNDAH'
+    DOCKER_PASS = 'dondizzy12'
   }
 }
