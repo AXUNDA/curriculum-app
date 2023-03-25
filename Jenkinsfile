@@ -30,6 +30,12 @@ pipeline {
       }
     }
 
+    stage('push') {
+      steps {
+        sh 'docker push azundah/curriculum-front:latest'
+      }
+    }
+
   }
   environment {
     DOCKER_USER = 'Azundah'
