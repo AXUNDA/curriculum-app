@@ -15,8 +15,7 @@ pipeline {
 
     stage('front-end build') {
       steps {
-        sh '''docker build -f curriculum-front/Dockerfile . -t azundah/curriculum-front:latest
-'''
+        sh 'docker build -f curriculum-front/Dockerfile . '
       }
     }
 
